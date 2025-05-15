@@ -17,7 +17,6 @@ public class UserRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    //TODO melhorar o return, e se o usuer vier null?
     public Optional<User> findByEmail(String email) {
         String sql = "SELECT * FROM users WHERE email = ?";
 
