@@ -1,5 +1,7 @@
 package com.app.PayTogether.entity;
 
+import java.util.List;
+
 public class User {
 
     private Long id;
@@ -7,15 +9,25 @@ public class User {
     private String password;
     private String username;
     private boolean verified = false;
+    private List<Long> groupIds;
 
     public User() {
     }
 
-    public User(Long id, String email, String password, String username) {
+    public User(Long id, String email, String password) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+    }
+
+
+    public User(Long id, String email, String password, String username, boolean verified, List<Long> groupIds) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.username = username;
+        this.verified = verified;
+        this.groupIds = groupIds;
     }
 
     public Long getId() {
@@ -56,5 +68,13 @@ public class User {
 
     public void setVerified(boolean verified) {
         this.verified = verified;
+    }
+
+    public List<Long> getGroupIds() {
+        return groupIds;
+    }
+
+    public void setGroupIds(List<Long> groupIds) {
+        this.groupIds = groupIds;
     }
 }
